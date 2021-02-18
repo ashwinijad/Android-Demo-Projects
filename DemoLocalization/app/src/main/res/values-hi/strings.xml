@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--custom_message in the desired language-->
+    <!--App name also changes-->
+    <string name="app_name">GFG | भाषा स्थानीयकरण</string>
+    <string name="custom_message">यह एप्लिकेशन परीक्षण करता है कि भाषा स्थानीयकरण डिवाइस पर काम करती है या नहीं।</string>
+
+</resources>
