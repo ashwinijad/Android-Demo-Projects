@@ -32,7 +32,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="bottom"
-        android:layout_marginTop="@dimen/activity_margin"
         android:background="@android:color/white"
         android:orientation="vertical"
         android:paddingBottom="@dimen/activity_margin"
@@ -52,6 +51,8 @@
             android:alpha="0.38"
             android:gravity="end"
             android:maxLines="1"
+            android:textColor="@color/black"
+
             android:textStyle="bold"
             tools:text="2009 | EN"/>
 
@@ -64,6 +65,8 @@
             android:layout_marginStart="9dp"
             android:layout_marginTop="9dp"
             android:maxLines="1"
+            android:textColor="@color/black"
+
             tools:text="Movie Title"/>
 
         <TextView
@@ -76,6 +79,8 @@
             android:layout_marginTop="9dp"
             android:ellipsize="end"
             android:maxLines="2"
+            android:textColor="@color/black"
+
             tools:text="Nowadays, user engagement is considered one of the most important metrics for the success of your app"/>
 
     </LinearLayout>

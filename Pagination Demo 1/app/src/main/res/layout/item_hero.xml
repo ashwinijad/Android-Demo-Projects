@@ -44,6 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
+                android:textColor="@color/white"
                 android:maxLength="40"
                 android:maxLines="1"
                 tools:text="Doctor Who : The Day of the Doctor"/>
