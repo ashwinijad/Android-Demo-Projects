@@ -34,6 +34,7 @@ class RetroRepo(mOnGetDatalistener: RetroContract.onGetDataListener) : RetroCont
                     jsonResponse!![i]?.title?.let { allCountriesData.add(it) }
                 }
                 Log.d("Data", "Refreshed")*/
+
                 mOnGetDatalistener?.onSuccess("List Size: " + allCountriesData.size, response.body())
 
             }    }
