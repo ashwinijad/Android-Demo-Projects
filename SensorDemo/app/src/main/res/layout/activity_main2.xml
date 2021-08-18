@@ -1,0 +1,50 @@
+<RelativeLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="114dp"
+        android:text="TextView" />
+    <EditText
+        android:id="@+id/mobilenumber"
+        android:drawablePadding="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:singleLine="true"
+        android:textColorHint="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:imeOptions="actionNext"
+        android:maxLength="10"
+        android:theme="@style/EditTextTheme"
+        android:textColor="#ffffff"
+        android:textCursorDrawable="@null"
+
+        />
+    <Spinner android:id="@+id/fragment_filter_sp_users"
+        android:layout_width="match_parent"
+        android:overlapAnchor="false"
+        android:background="@android:color/transparent"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_gravity="end|bottom"
+        android:contentDescription="@null"
+        android:layout_marginBottom="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_background"
+        />
+
+</RelativeLayout>
