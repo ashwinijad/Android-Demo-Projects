@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() , RetroContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mPresenter = presenter(this)
-        mPresenter?.getDataFromURL(applicationContext, "")
+        mPresenter?.getDataFromURL()
         recyclerView = findViewById<View>(R.id.customRecycler) as RecyclerView
         linearLayoutManager = LinearLayoutManager(this)
         recyclerView!!.layoutManager = linearLayoutManager

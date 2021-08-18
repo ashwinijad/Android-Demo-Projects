@@ -12,8 +12,8 @@ import com.jakewharton.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
 
 
-class CustomAdapter(context: Context, dataList: List<RetroPhoto?>?) :
-    RecyclerView.Adapter<CustomAdapter.CustomViewHolder>() {
+class CustomAdapter(context: Context, dataList: List<RetroPhoto?>?) : RecyclerView.Adapter<CustomAdapter.CustomViewHolder>() {
+
     private val dataList: List<RetroPhoto?>?
     private val context: Context
 

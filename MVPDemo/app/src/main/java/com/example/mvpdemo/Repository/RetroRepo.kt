@@ -13,10 +13,11 @@ import java.util.ArrayList
 
 
 class RetroRepo(mOnGetDatalistener: RetroContract.onGetDataListener) : RetroContract.Interactor{
+
     private var mOnGetDatalistener: RetroContract.onGetDataListener?=null
     var jsonResponse: List<RetroPhoto?>? = ArrayList<RetroPhoto?>()
     var allCountriesData: MutableList<String> = ArrayList()
-    override fun initRetrofitCall(context: Context?, url: String) {
+    override fun initRetrofitCall() {
     val service = retrofitInstance!!.create(
         GetDataService::class.java
     )

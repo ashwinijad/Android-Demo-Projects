@@ -27,11 +27,11 @@ interface View {
 }
 
     interface Presenter {
-        fun getDataFromURL(context: Context?, url: String)
+        fun getDataFromURL()//context: Context?, url: String
     }
 
     interface Interactor {
-        fun initRetrofitCall(context: Context?, url: String)
+        fun initRetrofitCall()//context: Context?, url: String
     }
 
     interface onGetDataListener {

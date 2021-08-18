@@ -26,11 +26,11 @@ class presenter (countryView: RetroContract.countryView) : RetroContract.country
     override fun showCountry() = model.getCountry()
 
 }*/
-class presenter(private val mGetDataView: RetroContract.View) : RetroContract.Presenter,
-    RetroContract.onGetDataListener {
+class presenter(private val mGetDataView: RetroContract.View) : RetroContract.Presenter, RetroContract.onGetDataListener {
+
     private val mIntractor: RetroRepo
-    override fun getDataFromURL(context: Context?, url: String) {
-        mIntractor.initRetrofitCall(context, url)
+    override fun getDataFromURL() {
+        mIntractor.initRetrofitCall()
     }
 
     override fun onSuccess(message: String?, allCountriesData: List<RetroPhoto?>?) {
