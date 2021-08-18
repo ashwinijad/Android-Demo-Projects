@@ -10,10 +10,8 @@ data class RetroPhoto(
     var id: Int,
     @field:SerializedName("title")
     var title: String,
-    @field:SerializedName(
-        "url"
-    ) var url: String,
-    @field:SerializedName(
-        "thumbnailUrl"
-    ) var thumbnailUrl: String
+    @field:SerializedName("url")
+    var url: String,
+    @field:SerializedName("thumbnailUrl")
+    var thumbnailUrl: String
 )

@@ -18,9 +18,7 @@ class RetroRepo(mOnGetDatalistener: RetroContract.onGetDataListener) : RetroCont
     var jsonResponse: List<RetroPhoto?>? = ArrayList<RetroPhoto?>()
     var allCountriesData: MutableList<String> = ArrayList()
     override fun initRetrofitCall() {
-    val service = retrofitInstance!!.create(
-        GetDataService::class.java
-    )
+    val service = retrofitInstance!!.create(GetDataService::class.java)
     val call: Call<List<RetroPhoto?>?>? = service.allPhotos
     call?.enqueue(object : Callback<List<RetroPhoto?>?> {
         override fun onResponse(
@@ -31,11 +29,11 @@ class RetroRepo(mOnGetDatalistener: RetroContract.onGetDataListener) : RetroCont
             // generateDataList(response.body())
             if (response?.isSuccessful!!) {
                  jsonResponse= response.body()
-               // allcountry = jsonResponse?.country!!
+          /*     // allcountry = jsonResponse?.country!!
                 for (i in jsonResponse!!.indices) {
                     jsonResponse!![i]?.title?.let { allCountriesData.add(it) }
                 }
-                Log.d("Data", "Refreshed")
+                Log.d("Data", "Refreshed")*/
                 mOnGetDatalistener?.onSuccess("List Size: " + allCountriesData.size, response.body())
 
             }    }

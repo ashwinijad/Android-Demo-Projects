@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvpdemo.Model.RetroPhoto
@@ -20,12 +21,12 @@ class CustomAdapter(context: Context, dataList: List<RetroPhoto?>?) : RecyclerVi
     inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val mView: View
         var txtTitle: TextView
-        //private val coverImage: ImageView
+         val coverImage: ImageView
 
         init {
             mView = itemView
             txtTitle = mView.findViewById(R.id.Text2)
-            //coverImage = mView.findViewById(R.id.coverImage)
+            coverImage = mView.findViewById(R.id.avatar)
         }
     }
 
@@ -39,10 +40,10 @@ class CustomAdapter(context: Context, dataList: List<RetroPhoto?>?) : RecyclerVi
         holder.txtTitle.text = dataList!![position]?.title
         val builder = Picasso.Builder(context)
         builder.downloader(OkHttp3Downloader(context))
-      /*  builder.build().load(dataList[position].thumbnailUrl)
+        builder.build().load(dataList[position]?.thumbnailUrl)
             .placeholder(R.drawable.ic_launcher_background)
             .error(R.drawable.ic_launcher_background)
-            .into(holder.coverImage)*/
+            .into(holder.coverImage)
     }
 
     override fun getItemCount(): Int {
