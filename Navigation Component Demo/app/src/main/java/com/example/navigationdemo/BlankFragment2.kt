@@ -45,7 +45,7 @@ class BlankFragment2 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         btn=view.findViewById(R.id.button_frag2)
         btn?.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_blankFragment_to_blankFragment2);
+            Navigation.findNavController(view).navigate(R.id.action_blankFragment2_to_blankFragment);
 
         }
 

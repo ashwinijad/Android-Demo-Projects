@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view_friend"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardUseCompatPadding="true"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/Text1"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/avatar"
+            android:layout_marginLeft="16dp"
+            android:paddingTop="20dp"
+            android:text="id" />
+        <TextView
+            android:id="@+id/Text2"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/avatar"
+            android:layout_marginLeft="16dp"
+            android:paddingTop="10dp"
+            android:layout_below="@id/Text1"
+            android:text="email" />
+
+        <TextView
+            android:id="@+id/Text3"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/avatar"
+            android:layout_marginLeft="16dp"
+            android:paddingTop="10dp"
+            android:layout_below="@id/Text2"
+            android:text="first" />
+
+        <TextView
+            android:id="@+id/Text4"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Text3"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="-35dp"
+            android:layout_toRightOf="@+id/avatar"
+            android:paddingTop="10dp"
+            android:text="last" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

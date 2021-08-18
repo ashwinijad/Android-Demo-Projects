@@ -14,10 +14,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
     }
-    companion object {
+  /*  companion object {
         private val Fragment.navController get() = Navigation.findNavController(requireActivity(), R.id.my_nav_host_fragment)
 
-    }
+    }*/
 }
 
 /*
