@@ -48,6 +48,7 @@
             android:layout_toRightOf="@+id/avatar"
             android:layout_marginLeft="16dp"
             android:paddingTop="10dp"
+            android:visibility="gone"
             android:layout_below="@id/Text2"
             android:text="first" />
 
@@ -61,6 +62,7 @@
             android:layout_marginTop="-35dp"
             android:layout_toRightOf="@+id/avatar"
             android:paddingTop="10dp"
+            android:visibility="gone"
             android:text="last" />
 
 

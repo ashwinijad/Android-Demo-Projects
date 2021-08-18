@@ -21,12 +21,14 @@ class CustomAdapter(context: Context, dataList: List<RetroPhoto?>?) : RecyclerVi
     inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val mView: View
         var txtTitle: TextView
+        var id:TextView
          val coverImage: ImageView
 
         init {
             mView = itemView
             txtTitle = mView.findViewById(R.id.Text2)
             coverImage = mView.findViewById(R.id.avatar)
+            id=mView.findViewById(R.id.Text1)
         }
     }
 
@@ -38,6 +40,7 @@ class CustomAdapter(context: Context, dataList: List<RetroPhoto?>?) : RecyclerVi
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         holder.txtTitle.text = dataList!![position]?.title
+        holder.id.text= dataList[position]?.id.toString()
         val builder = Picasso.Builder(context)
         builder.downloader(OkHttp3Downloader(context))
         builder.build().load(dataList[position]?.thumbnailUrl)
