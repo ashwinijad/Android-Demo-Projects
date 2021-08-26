@@ -16,16 +16,7 @@ class ViewModel : ViewModel() {
 
      var heroListLivedata: MutableLiveData<List<RetroPhoto>> ?=
         MutableLiveData()
-    /*   val heroes: LiveData<List<RetroPhoto>>
-        get() {
 
-            if (heroList == null) {
-                heroList = MutableLiveData<List<RetroPhoto>>()
-                loadHeroes()
-            }
-
-            return heroList!!
-        }*/
 
 
      fun loadHeroes() {

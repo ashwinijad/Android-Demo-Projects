@@ -20,16 +20,16 @@ class MainActivity : AppCompatActivity() {
         myListViewModel = ViewModelProviders.of(this).get(MyListViewModel::class.java)
         myListViewModel!!.getMutableLiveData()
             .observe(this, object : Observer<ArrayList<MyListViewModel>> {
-             /* override  fun onChanged(myListViewModels: ArrayList<MyListViewModel?>?) {
-                    adapter = MyAdapter(myListViewModels, this@MainActivity)
+              override  fun onChanged(myListViewModels: ArrayList<MyListViewModel>?) {
+                    adapter = myListViewModels?.let { MyAdapter(it, this@MainActivity) }
                     recyclerview!!.layoutManager = LinearLayoutManager(applicationContext)
                     recyclerview!!.adapter = adapter
-                }*/
+                }
 
-                override fun onChanged(t: ArrayList<MyListViewModel>?) {
+         /*       override fun onChanged(t: ArrayList<MyListViewModel>?) {
                     adapter = MyAdapter(t!!, this@MainActivity)
                     recyclerview!!.layoutManager = LinearLayoutManager(applicationContext)
-                    recyclerview!!.adapter = adapter                }
+                    recyclerview!!.adapter = adapter                }*/
             })
     }
 }
