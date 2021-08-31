@@ -1,14 +1,18 @@
-package com.example.contactapp;
+package com.example.contactapp.View;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
+
+import com.example.contactapp.DbHelper;
+import com.example.contactapp.R;
+import com.example.contactapp.ViewModel.Viewmodel;
 
 public class DetailsAct extends AppCompatActivity {
     String id, name, address;
@@ -19,12 +23,14 @@ public class DetailsAct extends AppCompatActivity {
     public static final String TAG_ID = "id";
     public static final String TAG_NAME = "name";
     public static final String TAG_ADDRESS = "address";
+    Viewmodel viewmodel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.deatilactivity);
         SQLite = new DbHelper(getApplicationContext());
+        viewmodel = ViewModelProviders.of(this).get(Viewmodel.class);
 
         id = getIntent().getStringExtra(MainActivity.TAG_ID);
         name = getIntent().getStringExtra(MainActivity.TAG_NAME);
@@ -51,8 +57,9 @@ public class DetailsAct extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-                                        SQLite.delete(Integer.parseInt(id));
-finish();
+                                        //SQLite.delete(Integer.parseInt(id));
+                                        viewmodel.delete(Integer.parseInt(id));
+                                        finish();
                                     }
                                 }
         );

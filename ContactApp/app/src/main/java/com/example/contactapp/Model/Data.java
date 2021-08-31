@@ -1,4 +1,4 @@
-package com.example.contactapp;
+package com.example.contactapp.Model;
 
 public class Data {
     private String id, name, address;

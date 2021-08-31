@@ -6,8 +6,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import androidx.lifecycle.MutableLiveData;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class DbHelper extends SQLiteOpenHelper {
 
@@ -20,6 +23,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_NAME = "name";
     public static final String COLUMN_ADDRESS = "address";
+    ArrayList<HashMap<String, String>> listofMaps = new ArrayList();
 
     public DbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -42,19 +46,22 @@ public class DbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public ArrayList<HashMap<String, String>> getAllData() {
-        ArrayList<HashMap<String, String>> wordList;
-        wordList = new ArrayList<HashMap<String, String>>();
+    public MutableLiveData<ArrayList<HashMap<String, String>>> getAllData() {
+        MutableLiveData<ArrayList<HashMap<String, String>>> wordList;
+        wordList = new MutableLiveData<ArrayList<HashMap<String, String>>>();
         String selectQuery = "SELECT * FROM " + TABLE_SQLite;
         SQLiteDatabase database = this.getWritableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
+        listofMaps.clear();
         if (cursor.moveToFirst()) {
             do {
                 HashMap<String, String> map = new HashMap<String, String>();
                 map.put(COLUMN_ID, cursor.getString(0));
                 map.put(COLUMN_NAME, cursor.getString(1));
                 map.put(COLUMN_ADDRESS, cursor.getString(2));
-                wordList.add(map);
+
+                listofMaps.add(map);
+                wordList.setValue(listofMaps);
             } while (cursor.moveToNext());
         }
 

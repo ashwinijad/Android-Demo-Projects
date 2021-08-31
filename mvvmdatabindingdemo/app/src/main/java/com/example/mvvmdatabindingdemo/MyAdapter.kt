@@ -12,6 +12,7 @@ import com.example.mvvmdatabindingdemo.databinding.HelloBinding
     RecyclerView.Adapter<MyAdapter.ViewHolder>() {
     private val context: Context
     private var layoutInflater: LayoutInflater? = null
+     var myListBinding: HelloBinding ?=null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         if (layoutInflater == null) {
             layoutInflater = LayoutInflater.from(parent.context)
@@ -20,6 +21,7 @@ import com.example.mvvmdatabindingdemo.databinding.HelloBinding
             DataBindingUtil.inflate(layoutInflater!!, R.layout.hello, parent, false)
         return ViewHolder(myListBinding)
     }
+
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val myListViewModel = arrayList[position]
