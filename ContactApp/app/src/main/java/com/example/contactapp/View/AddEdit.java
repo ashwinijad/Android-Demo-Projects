@@ -1,4 +1,4 @@
-package com.example.contactapp;
+package com.example.contactapp.View;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
+
+import com.example.contactapp.DbHelper;
+import com.example.contactapp.R;
+import com.example.contactapp.ViewModel.Viewmodel;
 
 public class AddEdit extends AppCompatActivity {
 
@@ -17,6 +22,8 @@ public class AddEdit extends AppCompatActivity {
     Button btn_submit, btn_cancel;
     DbHelper SQLite = new DbHelper(this);
     String id, name, address;
+    Viewmodel viewmodel;
+
     public static final String TAG_ID = "id";
     public static final String TAG_NAME = "name";
     public static final String TAG_ADDRESS = "address";
@@ -24,7 +31,8 @@ public class AddEdit extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit);
-     //   getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //   getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        viewmodel = ViewModelProviders.of(this).get(Viewmodel.class);
 
         txt_id = (EditText) findViewById(R.id.txt_id);
         txt_name = (EditText) findViewById(R.id.txt_name);
@@ -102,7 +110,8 @@ public class AddEdit extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),
                     "Please input name or address ...", Toast.LENGTH_SHORT).show();
         } else {
-            SQLite.insert(txt_name.getText().toString().trim(), txt_address.getText().toString().trim());
+            // SQLite.insert(txt_name.getText().toString().trim(), txt_address.getText().toString().trim());
+            viewmodel.insert(txt_name.getText().toString().trim(), txt_address.getText().toString().trim());
    /*         Intent intent = new Intent(AddEdit.this, AddEdit.class);
             intent.putExtra(TAG_ID, id);
             intent.putExtra(TAG_NAME, name);
@@ -127,7 +136,9 @@ public class AddEdit extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),
                     "Please input name or address ...", Toast.LENGTH_SHORT).show();
         } else {
-            SQLite.update(Integer.parseInt(txt_id.getText().toString().trim()), txt_name.getText().toString().trim(),
+           /* SQLite.update(Integer.parseInt(txt_id.getText().toString().trim()), txt_name.getText().toString().trim(),
+                    txt_address.getText().toString().trim());*/
+            viewmodel.update(Integer.parseInt(txt_id.getText().toString().trim()), txt_name.getText().toString().trim(),
                     txt_address.getText().toString().trim());
             name=txt_name.getText().toString().trim();
             address=txt_address.getText().toString().trim();
@@ -143,3 +154,4 @@ public class AddEdit extends AppCompatActivity {
 
 
 }
+

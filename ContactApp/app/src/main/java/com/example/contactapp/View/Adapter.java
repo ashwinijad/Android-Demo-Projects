@@ -1,4 +1,4 @@
-package com.example.contactapp;
+package com.example.contactapp.View;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.example.contactapp.Model.Data;
+import com.example.contactapp.R;
 
 import java.util.List;
 
