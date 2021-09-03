@@ -25,7 +25,15 @@ class MainActivity : FragmentActivity(), OnMapReadyCallback {
     var currentLocation: Location? = null
     var fusedLocationProviderClient: FusedLocationProviderClient? = null
 
+    // below are the latitude and longitude
+    // of 4 different locations.
+    var sydney = LatLng(-34.00, 151.00)
+    var TamWorth = LatLng(-31.083332, 150.916672)
+    var NewCastle = LatLng(-32.916668, 151.750000)
+    var Brisbane = LatLng(-27.470125, 153.021072)
 
+    // creating array list for adding all our locations.
+    private var locationArrayList: ArrayList<LatLng>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -61,6 +69,17 @@ class MainActivity : FragmentActivity(), OnMapReadyCallback {
                     val supportMapFragment: SupportMapFragment =
                             (supportFragmentManager.findFragmentById(R.id.myMap) as SupportMapFragment?)!!
                     supportMapFragment.getMapAsync(this@MainActivity)
+/*
+                    // in below line we are initializing our array list.
+                    locationArrayList = ArrayList()
+
+                    // on below line we are adding our
+                    // locations in our array list.
+
+                    locationArrayList?.add(sydney)
+                    locationArrayList?.add(TamWorth)
+                    locationArrayList?.add(NewCastle)
+                    locationArrayList?.add(Brisbane)*/
                 }
             }
         })
@@ -75,6 +94,26 @@ class MainActivity : FragmentActivity(), OnMapReadyCallback {
        val melbourne: Marker = googleMap.addMarker(MarkerOptions()
                .position(latLng).title("I am here!"))
        melbourne.showInfoWindow()
+
+    /*   // inside on map ready method
+       // we will be displaying all our markers.
+       // for adding markers we are running for loop and
+       // inside that we are drawing marker on our map.
+       // inside on map ready method
+       // we will be displaying all our markers.
+       // for adding markers we are running for loop and
+       // inside that we are drawing marker on our map.
+       for (i in locationArrayList!!.indices) {
+
+           // below line is use to add marker to each location of our array list.
+           googleMap.addMarker(MarkerOptions().position(locationArrayList!![i]).title("Marker"))
+
+           // below lin is use to zoom our camera on map.
+           googleMap.animateCamera(CameraUpdateFactory.zoomTo(18.0f))
+
+           // below line is use to move our camera to the specific location.
+           googleMap.moveCamera(CameraUpdateFactory.newLatLng(locationArrayList!![i]))
+       }*/
 
     }
 
