@@ -5,27 +5,6 @@ import com.example.mvpdemo.Contract.RetroContract
 import com.example.mvpdemo.Model.RetroPhoto
 import com.example.mvpdemo.Repository.RetroRepo
 
-/*
-class presenter (countryView: RetroContract.countryView) : RetroContract.countryPresenter {
-
-
-    private var view: RetroContract.countryView = countryView
-    private var model: RetroContract.countryModel = RetroRepo()
-
-
-    override fun uiAutoUpdate() {
-        view.updateViewData()
-    }
-
-    override fun networkcall(*/
-/*city: String*//*
-) {
-        model?.getCountyNameByCapital( this)
-    }
-
-    override fun showCountry() = model.getCountry()
-
-}*/
 class presenter(private val mGetDataView: RetroContract.View) : RetroContract.Presenter, RetroContract.onGetDataListener {
 
     private val mIntractor: RetroRepo

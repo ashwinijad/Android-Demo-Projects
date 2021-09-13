@@ -25,8 +25,6 @@ class RetroRepo(mOnGetDatalistener: RetroContract.onGetDataListener) : RetroCont
             call: Call<List<RetroPhoto?>?>?,
             response: Response<List<RetroPhoto?>?>
         ) {
-            //  progressDoalog.dismiss()
-            // generateDataList(response.body())
             if (response?.isSuccessful!!) {
                  jsonResponse= response.body()
           /*     // allcountry = jsonResponse?.country!!
