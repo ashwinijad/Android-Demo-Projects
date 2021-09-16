@@ -5,7 +5,7 @@ import com.example.mvpdemo.Model.RetroPhoto
 
 interface RetroContract {
 
-interface View {
+interface View {//activty or fragment
     fun onGetDataSuccess(message: String, list: List<RetroPhoto?>?)
     fun onGetDataFailure(message: String)
 }
@@ -14,11 +14,11 @@ interface View {
         fun getDataFromURL()//context: Context?, url: String
     }
 
-    interface Interactor {
+    interface Interactor {//repository
         fun initRetrofitCall()//context: Context?, url: String
     }
 
-    interface onGetDataListener {
+    interface onGetDataListener {//this will make interaction betn repo and presenter
         fun onSuccess(message: String?, list: List<RetroPhoto?>?)
         fun onFailure(message: String?)
     }
